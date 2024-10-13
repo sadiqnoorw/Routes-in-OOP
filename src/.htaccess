@@ -1,0 +1,11 @@
+# The public (root) directory .htaccess file
+
+Options -MultiViews
+
+DirectoryIndex public/index.php
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f   
+RewriteRule ^(.+)$ public/index.php?url=$1 [QSA,L]
