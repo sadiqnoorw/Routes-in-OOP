@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Exception\RouteNotFoundException;
 /**
  * Class Router
  * 
@@ -75,7 +76,7 @@ class Router
          * If no action is found for the requested route, a RouteNotFoundException is thrown.
          */
         if (!$action) {
-            throw new \RouteNotFoundException();
+            throw new RouteNotFoundException();
         }
 
         /**
